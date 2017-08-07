@@ -71,7 +71,7 @@ namespace ConsoleApplication1
             var person = new Person();
             var date = new DateTime();
             var list = new List<string>();
-            var obj = new object();
+            var obj = new Object();
 
             visitor.Visit(child);
             visitor.Visit(teenager);
