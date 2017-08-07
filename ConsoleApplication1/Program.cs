@@ -36,7 +36,7 @@ namespace ConsoleApplication1
     {
         static void Main()
         {
-            var list = new List<TextCell>
+            var list0 = new List<TextCell>
             {
                 new TextCell {Text = "A"},
                 new TextCell {Text = "Aa"},
@@ -54,7 +54,7 @@ namespace ConsoleApplication1
                 new TextCell {Text = "C"},
             };
             //List<IGrouping<string, TextCell>>
-            var list1 = list.OrderBy(c => c.Text).GroupBy(c => c.Text[0].ToString(), c => c).Select(i=> new Grouper<string, TextCell> { Item = i}).ToList();
+            var list1 = list0.OrderBy(c => c.Text).GroupBy(c => c.Text[0].ToString(), c => c).Select(i=> new Grouper<string, TextCell> { Item = i}).ToList();
             //list1;//.Select( g = new Typle<string, TextCell>())
 
             return;
@@ -70,11 +70,15 @@ namespace ConsoleApplication1
             var teenager = new Teenager();
             var person = new Person();
             var date = new DateTime();
+            var list = new List<string>();
+            var obj = new object();
 
             visitor.Visit(child);
             visitor.Visit(teenager);
             visitor.Visit(person);
             visitor.Visit(date);
+            visitor.Visit(list);
+            visitor.Visit(obj);
 
             child.Visit();
             teenager.Visit();
